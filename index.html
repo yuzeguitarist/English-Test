@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初二下英语期末复习</title>
+    <style>
+        /* CSS 代码部分：基于你提供的参考进行了适配和简化 */
+        
+        /* 全局样式重置和基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border-radius: 0; /* 强制无圆角 */
+        }
+
+        body {
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            line-height: 1.8;
+            color: #000;
+            background: #fff;
+            font-weight: 400;
+        }
+
+        /* 容器布局 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 头部样式 */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 100;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        
+        /* 题目区域样式 */
+        .quiz-section {
+            margin-bottom: 40px;
+        }
+        
+        .quiz-section h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .question-block {
+            margin-bottom: 30px;
+        }
+        
+        .question-text {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        /* 选择题选项 */
+        .options-group label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .options-group input[type="radio"] {
+            margin-right: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #fff;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid #000;
+            transform: translateY(0.2em);
+            cursor: pointer;
+        }
+
+        .options-group input[type="radio"]:checked {
+            background-color: #000;
+            border: 1px solid #000;
+        }
+
+        /* 填空题输入框 */
+        .fill-in-input {
+            font-family: inherit;
+            font-size: 1rem;
+            border: none;
+            border-bottom: 1px solid #000;
+            background: transparent;
+            padding: 4px 2px;
+            width: 150px;
+            text-align: center;
+        }
+        
+        .fill-in-input:focus {
+            outline: none;
+            border-bottom: 2px solid #000;
+        }
+        
+        /* 批改后样式 */
+        .correct-choice {
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+
+        .incorrect-choice {
+            background-color: #fff;
+            color: #888;
+            text-decoration: line-through;
+        }
+        
+        .correct-fill {
+            border-bottom: 2px solid #000;
+            color: #000;
+        }
+        
+        .incorrect-fill {
+            border-bottom: 2px solid #000;
+            color: #888;
+        }
+        
+        .correct-answer-text {
+            margin-left: 15px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* 提交按钮 */
+        .submit-container {
+            text-align: center;
+            border-top: 1px solid #000;
+            padding-top: 40px;
+            margin-top: 40px;
+        }
+
+        #submit-btn {
+            background: #fff;
+            border: 1px solid #000;
+            color: #000;
+            padding: 12px 28px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        #submit-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        #submit-btn:disabled {
+            background: #f5f5f5;
+            color: #aaa;
+            border-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* 结果展示 */
+        #results {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.5rem;
+            font-weight: 100;
+            letter-spacing: 0.05em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>English Test</h1>
+            <p>初二下英语期末复习卷</p>
+        </header>
+
+        <form id="quiz-form">
+            <section class="quiz-section">
+                <h2>一、选择题 (每题 1 分)</h2>
+                
+                <div class="question-block" data-question-id="1" data-type="choice" data-answer="C">
+                    <p class="question-text">1. I have ___ decided when to leave, but my sister hasn't decided ___.</p>
+                    <div class="options-group">
+                        <label><input type="radio" name="q1" value="A"> A. yet; yet</label>
+                        <label><input type="radio" name="q1" value="B"> B. already; already</label>
+                        <label><input type="radio" name="q1" value="C"> C. already; yet</label>
+                        <label><input type="radio" name="q1" value="D"> D. yet; already</label>
+                    </div>
+                </div>
+                
+                <div class="question-block" data-question-id="2" data-type="choice" data-answer="A">
+                    <p class="question-text">2. My brother usually ___ about an hour doing his homework every day.</p>
+                    <div class="options-group">
+                        <label><input type="radio" name="q2" value="A"> A. spends</label>
+                        <label><input type="radio" name="q2" value="B"> B. takes</label>
+                        <label><input type="radio" name="q2" value="C"> C. costs</label>
+                        <label><input type="radio" name="q2" value="D"> D. pays</label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="3" data-type="choice" data-answer="B">
+                    <p class="question-text">3. In order to protect the environment, we should stop people from ___ so many trees.</p>
+                    <div class="options-group">
+                        <label><input type="radio" name="q3" value="A"> A. picking up</label>
+                        <label><input type="radio" name="q3" value="B"> B. cutting down</label>
+                        <label><input type="radio" name="q3" value="C"> C. throwing away</label>
+                        <label><input type="radio" name="q3" value="D"> D. putting out</label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="4" data-type="choice" data-answer="D">
+                    <p class="question-text">4. Some of the animals ___ the pollution. -Right. The government will find ways to solve the problem.</p>
+                    <div class="options-group">
+                        <label><input type="radio" name="q4" value="A"> A. die to</label>
+                        <label><input type="radio" name="q4" value="B"> B. die in</label>
+                        <label><input type="radio" name="q4" value="C"> C. die as</label>
+                        <label><input type="radio" name="q4" value="D"> D. die from</label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="5" data-type="choice" data-answer="B">
+                    <p class="question-text">5. Remember this, kids. The harder you work, the ___ you will be.</p>
+                    <div class="options-group">
+                        <label><input type="radio" name="q5" value="A"> A. worse</label>
+                        <label><input type="radio" name="q5" value="B"> B. luckier</label>
+                        <label><input type="radio" name="q5" value="C"> C. easier</label>
+                        <label><input type="radio" name="q5" value="D"> D. more difficult</label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="6" data-type="choice" data-answer="B">
+                    <p class="question-text">6. What does his uncle do?  —___ I know, he is a doctor.</p>
+                    <div class="options-group">
+                        <label><input type="radio" name="q6" value="A"> A. As well as</label>
+                        <label><input type="radio" name="q6" value="B"> B. As far as</label>
+                        <label><input type="radio" name="q6" value="C"> C. As soon as</label>
+                        <label><input type="radio" name="q6" value="D"> D. As long as</label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="7" data-type="choice" data-answer="C">
+                    <p class="question-text">7. Feel free ___ me if you have any question. -That's very kind of you.</p>
+                    <div class="options-group">
+                        <label><input type="radio" name="q7" value="A"> A. ask</label>
+                        <label><input type="radio" name="q7" value="B"> B. asks</label>
+                        <label><input type="radio" name="q7" value="C"> C. to ask</label>
+                        <label><input type="radio" name="q7" value="D"> D. asking</label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="8" data-type="choice" data-answer="D">
+                    <p class="question-text">8. Would you like something to eat, Mr. Song? -No, thanks. I'm not hungry. I ___ some zongzi already.</p>
+                    <div class="options-group">
+                        <label><input type="radio" name="q8" value="A"> A. eat</label>
+                        <label><input type="radio" name="q8" value="B"> B. ate</label>
+                        <label><input type="radio" name="q8" value="C"> C. am eating</label>
+                        <label><input type="radio" name="q8" value="D"> D. have eaten</label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="9" data-type="choice" data-answer="A">
+                    <p class="question-text">9. Mike, why are you standing outdoors? -I ___ my keys. I have to wait here until my mother comes back.</p>
+                    <div class="options-group">
+                        <label><input type="radio" name="q9" value="A"> A. have lost</label>
+                        <label><input type="radio" name="q9" value="B"> B. will lose</label>
+                        <label><input type="radio" name="q9" value="C"> C. had lost</label>
+                        <label><input type="radio" name="q9" value="D"> D. lose</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>二、用所给单词的正确形式填空 (每题 2 分)</h2>
+
+                <div class="question-block" data-question-id="34" data-type="fill" data-answer="called">
+                    <p class="question-text">34. A neighbor <input type="text" class="fill-in-input" id="q34" inputmode="text" autocapitalize="off"> (call) Tony helped me repair my fence yesterday.</p>
+                </div>
+
+                <div class="question-block" data-question-id="38" data-type="fill" data-answer="decided">
+                    <p class="question-text">38. They have already <input type="text" class="fill-in-input" id="q38" inputmode="text" autocapitalize="off"> (decide) to go to Beidaihe on vacation.</p>
+                </div>
+
+                <div class="question-block" data-question-id="39" data-type="fill" data-answer="to buy">
+                    <p class="question-text">39. There are so many books. I can't decide which one <input type="text" class="fill-in-input" id="q39" inputmode="text" autocapitalize="off"> (buy).</p>
+                </div>
+
+                <div class="question-block" data-question-id="40" data-type="fill" data-answer="dangerous">
+                    <p class="question-text">40. We should do something to protect these <input type="text" class="fill-in-input" id="q40" inputmode="text" autocapitalize="off"> (danger) wild animals.</p>
+                </div>
+                
+                <div class="question-block" data-question-id="41" data-type="fill" data-answer="excitement">
+                    <p class="question-text">41. When the child saw his father, he ran over to him with <input type="text" class="fill-in-input" id="q41" inputmode="text" autocapitalize="off"> (excite).</p>
+                </div>
+
+                <div class="question-block" data-question-id="42" data-type="fill" data-answer="natural">
+                    <p class="question-text">42. I'd like to spend some time enjoying the <input type="text" class="fill-in-input" id="q42" inputmode="text" autocapitalize="off"> (nature) world.</p>
+                </div>
+
+                <div class="question-block" data-question-id="43" data-type="fill" data-answer="freezing">
+                    <p class="question-text">43. You should drive more carefully in <input type="text" class="fill-in-input" id="q43" inputmode="text" autocapitalize="off"> (freeze) weather.</p>
+                </div>
+
+                <div class="question-block" data-question-id="44" data-type="fill" data-answer="mountain">
+                    <p class="question-text">44. Qomolangma is higher than any other <input type="text" class="fill-in-input" id="q44" inputmode="text" autocapitalize="off"> (mountain) in the world.</p>
+                </div>
+						</section>
+        </form>
+
+        <div class="submit-container">
+            <button id="submit-btn">批改 & 查看分数</button>
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript 代码部分
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            let totalScore = 0;
+            const totalPossibleScore = 9 * 1 + 8 * 2; // 9 choice questions, 8 fill-in questions
+
+            // --- 批改选择题 ---
+            const choiceQuestions = document.querySelectorAll('.question-block[data-type="choice"]');
+            choiceQuestions.forEach(question => {
+                const questionId = question.dataset.questionId;
+                const correctAnswer = question.dataset.answer;
+                const selectedOption = document.querySelector(`input[name="q${questionId}"]:checked`);
+                
+                const labels = question.querySelectorAll('.options-group label');
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswer) {
+                        totalScore += 1;
+                        selectedOption.parentElement.classList.add('correct-choice');
+                    } else {
+                        selectedOption.parentElement.classList.add('incorrect-choice');
+                        const correctLabel = question.querySelector(`input[value="${correctAnswer}"]`).parentElement;
+                        correctLabel.classList.add('correct-choice');
+                    }
+                } else {
+                    // 如果未选择，直接标出正确答案
+                    const correctLabel = question.querySelector(`input[value="${correctAnswer}"]`).parentElement;
+                    correctLabel.classList.add('correct-choice');
+                }
+            });
+
+            // --- 批改填空题 ---
+            const fillQuestions = document.querySelectorAll('.question-block[data-type="fill"]');
+            fillQuestions.forEach(question => {
+                const questionId = question.dataset.questionId;
+                const correctAnswer = question.dataset.answer;
+                const inputField = document.getElementById(`q${questionId}`);
+                const userAnswer = inputField.value.trim().toLowerCase();
+                
+                if (userAnswer === correctAnswer.toLowerCase()) {
+                    totalScore += 2;
+                    inputField.classList.add('correct-fill');
+                } else {
+                    inputField.classList.add('incorrect-fill');
+                    const correctAnswerSpan = document.createElement('span');
+                    correctAnswerSpan.textContent = `正确答案: ${correctAnswer}`;
+                    correctAnswerSpan.className = 'correct-answer-text';
+                    inputField.parentElement.appendChild(correctAnswerSpan);
+                }
+            });
+
+            // --- 显示总分 ---
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.textContent = `你的总分是: ${totalScore} / ${totalPossibleScore}`;
+
+            // --- 禁用所有输入和按钮 ---
+            const allInputs = document.querySelectorAll('input');
+            allInputs.forEach(input => input.disabled = true);
+            this.disabled = true;
+        });
+
+    </script>
+</body>
+</html>
